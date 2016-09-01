@@ -371,6 +371,10 @@ class Better_Font_Awesome_Library {
 		$theme_directory = get_stylesheet_directory();
 		$plugin_dir = plugin_dir_url( __FILE__ );
 
+		// Handle Windows based installations and differing slash directions
+		$bfa_directory = str_ireplace('\\', '/', $bfa_directory);
+		$theme_directory = str_ireplace('\\', '/', $theme_directory);
+
 		/**
 		 * Check if we're inside a theme or plugin.
 		 *
